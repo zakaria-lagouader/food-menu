@@ -25,6 +25,10 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
-        "flowbite": "^1.6.5"
+        "@chakra-ui/react": "^2.6.1",
+        "@emotion/react": "^11.11.0",
+        "@emotion/styled": "^11.11.0",
+        "flowbite": "^1.6.5",
+        "framer-motion": "^10.12.16"
     }
 }
