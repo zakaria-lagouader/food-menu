@@ -29,6 +29,7 @@
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
         "flowbite": "^1.6.5",
-        "framer-motion": "^10.12.16"
+        "framer-motion": "^10.12.16",
+        "jotai": "^2.1.0"
     }
 }
