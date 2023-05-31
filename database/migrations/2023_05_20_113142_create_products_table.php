@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text("text");
             $table->text("image");
             $table->decimal("price");
+            $table->integer("points");
             $table->foreignId("category_id")->constrained();
             $table->timestamps();
         });

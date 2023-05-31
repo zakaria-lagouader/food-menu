@@ -22,7 +22,8 @@ return new class extends Migration
             $table->text("notes");
             $table->string("delivery_type");
             $table->boolean("use_whatsapp")->default(false);
-            $table->decimal("total");
+            $table->decimal("total")->nullable();
+            $table->foreignId("user_id")->nullable()->constrained();
             $table->timestamps();
         });
     }

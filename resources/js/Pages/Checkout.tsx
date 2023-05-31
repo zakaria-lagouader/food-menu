@@ -35,6 +35,7 @@ function CartItems({
         telephone: string;
         notes: string;
         use_whatsapp: boolean;
+        create_account: boolean;
         delivery_type: string;
     };
     cart: TCartItem[];
@@ -65,6 +66,9 @@ function CartItems({
                                         </p>
                                         <p className="hidden text-gray-500 sm:block">
                                             {item.product.sub_name}
+                                        </p>
+                                        <p className="text-gray-500 sm:block">
+                                            x{item.qty}
                                         </p>
                                     </div>
                                 </div>
@@ -114,6 +118,7 @@ function CheckoutForm({
         telephone: string;
         notes: string;
         use_whatsapp: boolean;
+        create_account: boolean;
         delivery_type: string;
     }>;
     cart: TCartItem[];
@@ -260,6 +265,17 @@ function CheckoutForm({
                     <FormControl>
                         <Checkbox
                             fontWeight="medium"
+                            isChecked={data.create_account}
+                            onChange={(e) =>
+                                setData("create_account", e.target.checked)
+                            }
+                        >
+                            Create Account ?
+                        </Checkbox>
+                    </FormControl>
+                    <FormControl>
+                        <Checkbox
+                            fontWeight="medium"
                             isChecked={data.use_whatsapp}
                             onChange={(e) =>
                                 setData("use_whatsapp", e.target.checked)
@@ -309,6 +325,7 @@ export default function Checkout({ cart }: CheckoutProps) {
         telephone: "",
         notes: "",
         use_whatsapp: false,
+        create_account: false,
         delivery_type: "cash",
     });
     return (

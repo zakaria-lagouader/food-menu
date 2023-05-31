@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Mail\OrderSummary;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
@@ -43,9 +46,25 @@ class OrderController extends Controller
             "total" => "required",
         ]);
 
-        $order = Order::create(array_merge($request->except(["cart"]), [
+        $account = null;
+        $score = 0;
+
+        if ($request->create_account) {
+            $account = User::create([
+                'name' => $request->nom . " " . $request->prenom,
+                "nom" => $request->nom,
+                "prenom" => $request->prenom,
+                "telephone" => $request->telephone,
+                "adress" => $request->adress,
+                'email' => $request->email,
+                'password' => Hash::make($request->nom),
+            ]);
+        }
+
+        $order = Order::create(array_merge($request->except(["cart", "create_account"]), [
             "num" => Str::random(10),
-            "total" => $request->delivery_type == "cash" ? $request->total + 10 : $request->total
+            "total" => $request->delivery_type == "cash" ? $request->total + 10 : $request->total,
+            "user_id" => $account->id ?? null
         ]));
 
         foreach ($request->cart as $cartItem) {
@@ -53,13 +72,22 @@ class OrderController extends Controller
                 "qty" => $cartItem["qty"],
                 "product_id" => $cartItem["product"]["id"],
             ]);
+
+            $score += intval($cartItem["product"]["points"]) * intval($cartItem["qty"]);
+        }
+
+        if ($account) {
+            $account->update([
+                "points" => $score
+            ]);
+            Auth::login($account);
         }
 
         Mail::to($request->email)->send(new OrderSummary($order));
 
         session()->forget("cart");
 
-        return redirect("/thank-you");
+        return redirect("/profile");
     }
 
     /**

@@ -39,6 +39,10 @@ Route::match(["GET", "POST"], "/checkout", function (Request $request) {
     ]);
 });
 
+Route::get("/profile", function () {
+    return Inertia::render("Profile/Index");
+})->middleware("auth");
+
 Route::post('/devis', [\App\Http\Controllers\DevisController::class, "store"])->name("devis.store");
 Route::post('/order/checkout', [\App\Http\Controllers\OrderController::class, "store"])->name("traiteur.success");
 

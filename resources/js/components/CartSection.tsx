@@ -56,6 +56,19 @@ function CartSection() {
     } = useCart();
     return (
         <>
+            {/* <div
+                className="absolute left-0 bottom-0 w-full p-4 z-[100] pointer-events-none block lg:hidden"
+                onClick={() => SetIsOpen(!isOpen)}
+            >
+                <div className="bg-teal-700 p-4 w-full max-w-lg mx-auto rounded-lg text-white flex items-center gap-4 cursor-pointer shadow-lg pointer-events-auto">
+                    <div className="w-8 h-8 bg-gray-200 font-bold text-gray-800 grid place-items-center rounded-full flex-shrink-0 ">
+                        {cartTotalQty}
+                    </div>
+                    <div className="text-white font-semibold text-lg">
+                        Total Price: {cartTotalPrice} Dhs
+                    </div>
+                </div>
+            </div> */}
             <button
                 className="w-14 h-14 rounded-full bg-black text-white cursor-pointer fixed z-[70] bottom-3 right-3 shadow-xl grid lg:hidden place-items-center"
                 onClick={() => SetIsOpen(!isOpen)}
