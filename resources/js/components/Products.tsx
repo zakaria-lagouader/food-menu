@@ -13,7 +13,7 @@ function ProductCard({ product }: ProductCardProps) {
     const { isInCart, addItemToCart, deletCartItem } = useCart();
 
     return (
-        <div className="rounded-xl overflow-hidden bg-white relative">
+        <div className="rounded-xl overflow-hidden bg-white relative flex-shrink-0 w-72 md:w-full">
             {isInCart(product) && (
                 <div className="absolute top-0 left-0 w-full h-full bg-white z-30 flex flex-col items-center justify-between gap-4 p-6">
                     <p className="tracking-widest font-medium text-dark-gray py-6">
@@ -108,7 +108,7 @@ function ProductsGroup({ category, products }: ProductsGroupProps) {
                     {products.length}
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div className="flex items-center flex-nowrap overflow-x-scroll md:overflow-auto md:grid md:grid-cols-2 xl:grid-cols-3 gap-4">
                 {products.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}

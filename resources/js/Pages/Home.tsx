@@ -104,7 +104,7 @@ function Home() {
                         </Link>
                     </div>
                 </div>
-                <div className="relative flex">
+                <div className="relative flex w-full lg:col-span-2 lg:w-1/2 lg:mx-auto">
                     <img
                         src="https://images.pexels.com/photos/1322184/pexels-photo-1322184.jpeg?auto=compress&cs=tinysrgb&w=600"
                         alt=""

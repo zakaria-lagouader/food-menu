@@ -18,6 +18,7 @@ import {
     Radio,
     RadioGroup,
 } from "@chakra-ui/react";
+import AppLayout from "@/Layouts/AppLayout";
 
 type CheckoutProps = {
     cart: TCartItem[];
@@ -329,24 +330,20 @@ export default function Checkout({ cart }: CheckoutProps) {
         delivery_type: "cash",
     });
     return (
-        <div className="bg-white">
-            <header className="flex items-center justify-between px-4 py-10 sm:px-6 sm:py-8 lg:px-8">
-                <Link href="/">
-                    <img src="/img/logo.webp" alt="" className="h-12 w-auto" />
-                </Link>
-            </header>
+        <AppLayout>
+            <div className="bg-white">
+                <main className="max-w-7xl mx-auto px-4 pt-4 pb-16 sm:px-6 sm:pt-8 sm:pb-24 lg:px-8 xl:px-2 xl:pt-14">
+                    <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
+                        <CartItems cart={cart} formData={formData.data} />
 
-            <main className="max-w-7xl mx-auto px-4 pt-4 pb-16 sm:px-6 sm:pt-8 sm:pb-24 lg:px-8 xl:px-2 xl:pt-14">
-                <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-                    <CartItems cart={cart} formData={formData.data} />
-
-                    <CheckoutForm
-                        formData={formData}
-                        cart={cart}
-                        cartTotalPrice={cartTotalPrice}
-                    />
-                </div>
-            </main>
-        </div>
+                        <CheckoutForm
+                            formData={formData}
+                            cart={cart}
+                            cartTotalPrice={cartTotalPrice}
+                        />
+                    </div>
+                </main>
+            </div>
+        </AppLayout>
     );
 }

@@ -56,55 +56,21 @@ function CartSection() {
     } = useCart();
     return (
         <>
-            {/* <div
-                className="absolute left-0 bottom-0 w-full p-4 z-[100] pointer-events-none block lg:hidden"
-                onClick={() => SetIsOpen(!isOpen)}
-            >
-                <div className="bg-teal-700 p-4 w-full max-w-lg mx-auto rounded-lg text-white flex items-center gap-4 cursor-pointer shadow-lg pointer-events-auto">
-                    <div className="w-8 h-8 bg-gray-200 font-bold text-gray-800 grid place-items-center rounded-full flex-shrink-0 ">
-                        {cartTotalQty}
-                    </div>
-                    <div className="text-white font-semibold text-lg">
-                        Total Price: {cartTotalPrice} Dhs
+            {!isOpen && (
+                <div
+                    className="absolute left-0 bottom-0 w-full p-4 z-[100] pointer-events-none block lg:hidden"
+                    onClick={() => SetIsOpen(true)}
+                >
+                    <div className="bg-primary p-4 w-full max-w-lg mx-auto rounded-lg text-white flex items-center gap-4 cursor-pointer shadow-lg pointer-events-auto">
+                        <div className="w-8 h-8 bg-gray-200 font-bold text-gray-800 grid place-items-center rounded-full flex-shrink-0 ">
+                            {cartTotalQty}
+                        </div>
+                        <div className="text-white font-semibold text-lg">
+                            Total Price: {cartTotalPrice} Dhs
+                        </div>
                     </div>
                 </div>
-            </div> */}
-            <button
-                className="w-14 h-14 rounded-full bg-black text-white cursor-pointer fixed z-[70] bottom-3 right-3 shadow-xl grid lg:hidden place-items-center"
-                onClick={() => SetIsOpen(!isOpen)}
-            >
-                {isOpen ? (
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
-                ) : (
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M3.75 9h16.5m-16.5 6.75h16.5"
-                        />
-                    </svg>
-                )}
-            </button>
+            )}
             <div
                 className={
                     "shadow-left bg-white p-4 fixed top-0 right-0 h-full w-full lg:w-[380px] z-[60] lg:block" +
@@ -126,8 +92,14 @@ function CartSection() {
                         </p>
                     </div>
                     <div className="flex-1"></div>
-                    <div className="w-10 h-10 bg-white rounded-full text-md font-bold text-dark-gray grid place-items-center">
+                    <div className="w-10 h-10 bg-white rounded-full text-md font-bold text-dark-gray hidden place-items-center lg:grid">
                         {cartTotalQty}
+                    </div>
+                    <div
+                        onClick={() => SetIsOpen(false)}
+                        className="w-10 h-10 bg-white rounded-full text-md font-bold text-dark-gray grid place-items-center lg:hidden text-xl cursor-pointer"
+                    >
+                        &times;
                     </div>
                 </div>
 

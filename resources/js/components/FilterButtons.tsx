@@ -32,7 +32,7 @@ function FilterButton({ image, text, filter, active }: FilterButtonProps) {
             )}`}
             onClick={selectCategory}
         >
-            <img src={image} alt="pizza" className="w-6 h-6" />
+            <img src={image} alt="pizza" className="w-5 h-5" />
             <span
                 className={cls(
                     active,
