@@ -37,11 +37,11 @@ export default function Checkout({
     const { cartTotalPrice, cartItems, deletCartItem, setCartItems } =
         useCart();
     const { data, setData, post, processing, errors, transform } = useForm({
-        nom: auth.user.nom ?? "",
-        prenom: auth.user.prenom ?? "",
-        email: auth.user.email ?? "",
-        adress: auth.user.adress ?? "",
-        telephone: auth.user.telephone ?? "",
+        nom: auth.user?.nom ?? "",
+        prenom: auth.user?.prenom ?? "",
+        email: auth.user?.email ?? "",
+        adress: auth.user?.adress ?? "",
+        telephone: auth.user?.telephone ?? "",
         notes: "",
         use_whatsapp: false,
         create_account: false,

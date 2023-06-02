@@ -30,7 +30,7 @@ class OrderSummary extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Order',
+            subject: 'Nouvelle Commande!',
         );
     }
 

@@ -6,7 +6,8 @@ import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { ChakraProvider } from "@chakra-ui/react";
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
+    window.document.getElementsByTagName("title")[0]?.innerText ||
+    "Cucina Napoli";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,

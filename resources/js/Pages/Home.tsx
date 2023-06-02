@@ -1,8 +1,9 @@
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 
 function Home() {
     return (
         <>
+            <Head title="Accueil" />
             <div className="relative">
                 <main className="lg:relative bg-light-gray">
                     <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-0 lg:h-screen lg:flex lg:items-center lg:text-left">

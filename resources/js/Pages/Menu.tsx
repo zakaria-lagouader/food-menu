@@ -11,6 +11,7 @@ import {
     productsAtom,
     productsByCategoryAtom,
 } from "../stores/products";
+import { Head } from "@inertiajs/react";
 
 type HomeProps = {
     products: TProduct[];
@@ -40,6 +41,7 @@ function Home({ products, categories, restaurants }: HomeProps) {
 
     return (
         <div className="w-full h-screen overflow-hidden bg-light-gray">
+            <Head title={`Menu de ${restaurants}`} />
             <ProductModal />
             <div className="lg:mr-[380px] flex flex-col h-full">
                 <Header phone={phones[restaurants]} map={maps[restaurants]} />
