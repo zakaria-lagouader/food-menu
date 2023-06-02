@@ -1257,6 +1257,11 @@
   dependencies:
     client-only "^0.0.1"
 
+"@heroicons/react@^2.0.18":
+  version "2.0.18"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.18.tgz#f80301907c243df03c7e9fd76c0286e95361f7c1"
+  integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
+
 "@inertiajs/core@1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.0.7.tgz#8721cfe049a6a1d9be9bb1ec65667bf2ed4ee825"

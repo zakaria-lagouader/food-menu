@@ -13,18 +13,6 @@ function Navbar() {
                     />
                 </Link>
                 <div className="flex-1"></div>
-                <a
-                    href="to:124565898"
-                    className="flex-shrink-0 border-2 border-primary text-primary rounded-full w-12 h-12 grid place-items-center hover:text-white hover:bg-primary transition"
-                >
-                    <PhoneIcon />
-                </a>
-                <a
-                    href="#"
-                    className="flex-shrink-0 border-2 border-primary text-primary rounded-full w-12 h-12 grid place-items-center hover:text-white hover:bg-primary transition"
-                >
-                    <LocationIcon />
-                </a>
                 <Link
                     href="/profile"
                     className="flex-shrink-0 border-2 border-primary text-primary rounded-full w-12 h-12 grid place-items-center hover:text-white hover:bg-primary transition"

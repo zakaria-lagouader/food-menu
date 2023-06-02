@@ -19,14 +19,10 @@ const cartTotalItemsAtome = atom((get) => {
     }, 0);
 });
 
-export function useCart(defaultValue?: TCartItem[]) {
+export function useCart() {
     const [cartItems, setCartItems] = useAtom(cartAtome);
     const cartTotalPrice = useAtomValue(cartTotalAtome);
     const cartTotalQty = useAtomValue(cartTotalItemsAtome);
-
-    if (defaultValue !== undefined) {
-        setCartItems(defaultValue);
-    }
 
     const incrementItemQty = (index: number) => {
         const updatedItems = [...cartItems];
@@ -64,5 +60,6 @@ export function useCart(defaultValue?: TCartItem[]) {
         addItemToCart,
         cartTotalPrice,
         cartTotalQty,
+        setCartItems,
     };
 }

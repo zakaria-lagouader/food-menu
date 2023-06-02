@@ -132,7 +132,7 @@ function Home() {
                     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
                         <div className="flex justify-center space-x-6 md:order-2">
                             <a
-                                href="#"
+                                href="https://web.facebook.com/Cucina.Napoli/"
                                 className="text-gray-400 hover:text-gray-500"
                             >
                                 <span className="sr-only">Facebook</span>
@@ -150,7 +150,7 @@ function Home() {
                                 </svg>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.instagram.com/cucina.napoli/"
                                 className="text-gray-400 hover:text-gray-500"
                             >
                                 <span className="sr-only">Instagram</span>
@@ -168,7 +168,7 @@ function Home() {
                                 </svg>
                             </a>
                             <a
-                                href="#"
+                                href="https://twitter.com/cucina_napoli"
                                 className="text-gray-400 hover:text-gray-500"
                             >
                                 <span className="sr-only">Twitter</span>

@@ -10,7 +10,7 @@ import { Link } from "@inertiajs/react";
 import { useAtom } from "jotai";
 import { searchTextAtom } from "../stores/products";
 
-function Header() {
+function Header({ phone, map }: { phone: string; map: string }) {
     const [search, setSearch] = useAtom(searchTextAtom);
     return (
         <>
@@ -33,18 +33,20 @@ function Header() {
                                 onChange={(e) => setSearch(e.target.value)}
                                 type="text"
                                 placeholder="Rechercher un plat"
-                                className="px-2 py-4 flex-1 placeholder:text-gray-600 text-sm font-semibold bg-light-primary border-0"
+                                className="px-2 py-4 flex-1 placeholder:text-gray-600 text-sm font-semibold bg-light-primary border-transparent focus:border-transparent focus:ring-0"
                             />
                         </div>
                     </div>
                     <a
-                        href="to:124565898"
+                        target="_blank"
+                        href={`tel:${phone}`}
                         className="flex-shrink-0 border-2 border-primary text-primary rounded-full w-12 h-12 grid place-items-center hover:text-white hover:bg-primary transition"
                     >
                         <PhoneIcon />
                     </a>
                     <a
-                        href="#"
+                        target="_blank"
+                        href={map}
                         className="flex-shrink-0 border-2 border-primary text-primary rounded-full w-12 h-12 grid place-items-center hover:text-white hover:bg-primary transition"
                     >
                         <LocationIcon />
@@ -72,7 +74,7 @@ function Header() {
                         onChange={(e) => setSearch(e.target.value)}
                         type="text"
                         placeholder="Rechercher un plat"
-                        className="px-2 py-4 flex-1 placeholder:text-gray-600 text-sm font-semibold bg-light-primary border-0"
+                        className="px-2 py-4 flex-1 placeholder:text-gray-600 text-sm font-semibold bg-light-primary border-transparent focus:border-transparent focus:ring-0"
                     />
                 </div>
             </div>

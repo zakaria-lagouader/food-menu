@@ -47,4 +47,38 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function generateCouponCode()
+    {
+        $points_needed = 100;
+        $dollars_per_points = 10;
+        $left_points = $this->points % $points_needed;
+        $couponAmount = floor($this->points / $points_needed) * $dollars_per_points;
+        $couponCode = uniqid(); // Generate a unique coupon code using uniqid()
+
+        if ($couponAmount === 0) return null;
+
+        $coupon = Coupon::create([
+            'code' => $couponCode,
+            'amount' => $couponAmount,
+            'is_used' => false,
+            'user_id' => $this->id,
+        ]);
+
+        $this->update([
+            "points" => $left_points
+        ]);
+
+        return $coupon;
+    }
+
+    public function coupons()
+    {
+        return $this->hasMany(Coupon::class)->where("is_used", false);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

@@ -15,9 +15,20 @@ import {
 type HomeProps = {
     products: TProduct[];
     categories: TCategory[];
+    restaurants: string;
 };
 
-function Home({ products, categories }: HomeProps) {
+const phones = {
+    anoual: "0641516181",
+    palmier: "0641516181",
+};
+
+const maps = {
+    anoual: "https://goo.gl/maps/JLixr6tisrHhe3nB9",
+    palmier: "https://goo.gl/maps/nSUaxc2ify9VGZUp7",
+};
+
+function Home({ products, categories, restaurants }: HomeProps) {
     const setProducts = useSetAtom(productsAtom);
     const setCategories = useSetAtom(categoriesAtome);
     const productsByCategory = useAtomValue(productsByCategoryAtom);
@@ -31,7 +42,7 @@ function Home({ products, categories }: HomeProps) {
         <div className="w-full h-screen overflow-hidden bg-light-gray">
             <ProductModal />
             <div className="lg:mr-[380px] flex flex-col h-full">
-                <Header />
+                <Header phone={phones[restaurants]} map={maps[restaurants]} />
                 <div className="h-full overflow-y-scroll scroll-smooth">
                     {Object.keys(productsByCategory).map((category) => (
                         <ProductsGroup

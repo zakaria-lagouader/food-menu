@@ -11,6 +11,11 @@ class Order extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'created_at' => 'date:M j, Y',
+        'updated_at' => 'date:M j, Y',
+    ];
+
     public function items()
     {
         return $this->hasMany(OrderLine::class);

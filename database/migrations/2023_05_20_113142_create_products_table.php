@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("sub_name");
             $table->string("slug");
+            $table->string("restaurants");
             $table->text("text");
             $table->text("image");
             $table->decimal("price");
