@@ -16,7 +16,7 @@ import { Head } from "@inertiajs/react";
 type HomeProps = {
     products: TProduct[];
     categories: TCategory[];
-    restaurants: string;
+    restaurant: string;
 };
 
 const phones = {
@@ -29,7 +29,7 @@ const maps = {
     palmier: "https://goo.gl/maps/nSUaxc2ify9VGZUp7",
 };
 
-function Home({ products, categories, restaurants }: HomeProps) {
+function Home({ products, categories, restaurant }: HomeProps) {
     const setProducts = useSetAtom(productsAtom);
     const setCategories = useSetAtom(categoriesAtome);
     const productsByCategory = useAtomValue(productsByCategoryAtom);
@@ -41,10 +41,10 @@ function Home({ products, categories, restaurants }: HomeProps) {
 
     return (
         <div className="w-full h-screen overflow-hidden bg-light-gray">
-            <Head title={`Menu de ${restaurants}`} />
+            <Head title={`Menu de ${restaurant}`} />
             <ProductModal />
             <div className="lg:mr-[380px] flex flex-col h-full">
-                <Header phone={phones[restaurants]} map={maps[restaurants]} />
+                <Header phone={phones[restaurant]} map={maps[restaurant]} />
                 <div className="h-full overflow-y-scroll scroll-smooth">
                     {Object.keys(productsByCategory).map((category) => (
                         <ProductsGroup

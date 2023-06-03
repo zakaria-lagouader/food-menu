@@ -15,22 +15,18 @@ export default function OrdersHistory({
                     <div className="max-w-7xl mx-auto sm:px-2 lg:px-8">
                         <div className="max-w-2xl mx-auto px-4 lg:max-w-4xl lg:px-0">
                             <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-                                Order history
+                                Historique des commandes
                             </h1>
-                            <p className="mt-2 text-sm text-gray-500">
-                                Check the status of recent orders, manage
-                                returns, and discover similar products.
-                            </p>
                         </div>
                     </div>
 
                     <div className="mt-16">
-                        <h2 className="sr-only">Recent orders</h2>
+                        <h2 className="sr-only">Commandes récentes</h2>
                         <div className="max-w-7xl mx-auto sm:px-2 lg:px-8">
                             <div className="max-w-2xl mx-auto space-y-8 sm:px-4 lg:max-w-4xl lg:px-0">
                                 {orders.length === 0 && (
                                     <p className="text-center text-gray-400 my-6">
-                                        No orders yet!
+                                        Pas encore de commandes !
                                     </p>
                                 )}
                                 {orders.map((order) => (
@@ -39,7 +35,7 @@ export default function OrdersHistory({
                                         className="bg-white border-t border-b border-gray-200 shadow-sm sm:rounded-lg sm:border"
                                     >
                                         <h3 className="sr-only">
-                                            Order placed on{" "}
+                                            Commande passée le{" "}
                                             <time dateTime={order.created_at}>
                                                 {order.created_at}
                                             </time>
@@ -49,7 +45,7 @@ export default function OrdersHistory({
                                             <dl className="flex-1 grid grid-cols-2 gap-x-6 text-sm sm:col-span-3 sm:grid-cols-3 lg:col-span-2">
                                                 <div>
                                                     <dt className="font-medium text-gray-900">
-                                                        Order number
+                                                        Numéro de commande
                                                     </dt>
                                                     <dd className="mt-1 text-gray-500">
                                                         {order.num}
@@ -57,7 +53,7 @@ export default function OrdersHistory({
                                                 </div>
                                                 <div className="hidden sm:block">
                                                     <dt className="font-medium text-gray-900">
-                                                        Date placed
+                                                        Date
                                                     </dt>
                                                     <dd className="mt-1 text-gray-500">
                                                         <time
@@ -71,7 +67,7 @@ export default function OrdersHistory({
                                                 </div>
                                                 <div>
                                                     <dt className="font-medium text-gray-900">
-                                                        Total amount
+                                                        Montant total
                                                     </dt>
                                                     <dd className="mt-1 font-medium text-gray-900">
                                                         {order.total} Dhs
@@ -81,7 +77,6 @@ export default function OrdersHistory({
                                         </div>
 
                                         {/* Products */}
-                                        <h4 className="sr-only">Items</h4>
                                         <ul
                                             role="list"
                                             className="divide-y divide-gray-200"

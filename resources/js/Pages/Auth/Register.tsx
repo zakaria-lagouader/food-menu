@@ -31,15 +31,15 @@ export default function Register() {
                         alt="Cucina Napoli"
                     />
                     <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                        Sign up to your account
+                        S'inscrire
                     </h2>
                     <p className="mt-2 text-center text-sm text-gray-600">
-                        Or{" "}
+                        Ou{" "}
                         <Link
                             href="/login"
                             className="font-medium text-green-600 hover:text-green-500"
                         >
-                            login to your account
+                            se connecter à votre compte
                         </Link>
                     </p>
                 </div>
@@ -50,7 +50,7 @@ export default function Register() {
                         <div className="bg-red-50 rounded-lg mb-4">
                             <div className="px-4 py-5 sm:p-6">
                                 <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                    Errors
+                                    Erreurs
                                 </h3>
                                 <div className="mt-2 max-w-xl text-sm text-gray-700">
                                     <ul className="list-disc pl-4 space-y-1">
@@ -114,7 +114,7 @@ export default function Register() {
                                     htmlFor="email"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Email address
+                                    Adresse email
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -137,7 +137,7 @@ export default function Register() {
                                     htmlFor="password"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Password
+                                    Mot de passe
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -159,7 +159,7 @@ export default function Register() {
                                     htmlFor="password_confirmation"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Password Confirmation
+                                    Confirmation du mot de passe
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -191,7 +191,7 @@ export default function Register() {
                                         htmlFor="remember-me"
                                         className="ml-2 block text-sm text-gray-900"
                                     >
-                                        Remember me
+                                        Se souvenir de moi
                                     </label>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@ export default function Register() {
                                     type="submit"
                                     className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:bg-gray-200 disabled:text-gray-900 disabled:cursor-not-allowed"
                                 >
-                                    Sign in
+                                    s'inscrire
                                 </button>
                             </div>
                         </form>

@@ -72,7 +72,7 @@ export default function Checkout({
                         <div className="bg-red-50 rounded-lg mb-4">
                             <div className="px-4 py-5 sm:p-6">
                                 <h3 className="text-lg leading-6 font-medium text-gray-900">
-                                    Errors
+                                    Erreurs
                                 </h3>
                                 <div className="mt-2 max-w-xl text-sm text-gray-700">
                                     <ul className="list-disc pl-4 space-y-1">
@@ -84,7 +84,6 @@ export default function Checkout({
                             </div>
                         </div>
                     )}
-                    <h2 className="sr-only">Checkout</h2>
 
                     <form
                         onSubmit={handleSubmit}
@@ -146,7 +145,7 @@ export default function Checkout({
 
                             <div className="mt-10 border-t border-gray-200 pt-10">
                                 <h2 className="text-lg font-medium text-gray-900">
-                                    Shipping information
+                                    Informations sur la livraison
                                 </h2>
 
                                 <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
@@ -155,7 +154,7 @@ export default function Checkout({
                                             htmlFor="first-name"
                                             className="block text-sm font-medium text-gray-700"
                                         >
-                                            First name
+                                            Prenom
                                         </label>
                                         <div className="mt-1">
                                             <input
@@ -180,7 +179,7 @@ export default function Checkout({
                                             htmlFor="last-name"
                                             className="block text-sm font-medium text-gray-700"
                                         >
-                                            Last name
+                                            Nom
                                         </label>
                                         <div className="mt-1">
                                             <input
@@ -205,7 +204,7 @@ export default function Checkout({
                                             htmlFor="address"
                                             className="block text-sm font-medium text-gray-700"
                                         >
-                                            Address
+                                            Adresse
                                         </label>
                                         <div className="mt-1">
                                             <input
@@ -301,7 +300,7 @@ export default function Checkout({
                                                     htmlFor="create_account"
                                                     className="ml-3 block text-sm font-medium text-gray-700"
                                                 >
-                                                    Create Account ?
+                                                    Créer un compte ?
                                                 </label>
                                             </div>
                                         )}
@@ -401,7 +400,7 @@ export default function Checkout({
                             {/* Coupon Section */}
                             <div className="mt-10 border-t border-gray-200 pt-10">
                                 <h2 className="text-lg font-medium text-gray-900">
-                                    Coupon
+                                    Bon de réduction
                                 </h2>
 
                                 <div className="mt-4">
@@ -409,7 +408,7 @@ export default function Checkout({
                                         htmlFor="coupon"
                                         className="block text-sm font-medium text-gray-700"
                                     >
-                                        Coupon Code
+                                        Code de bon de réduction
                                     </label>
                                     <div className="mt-1">
                                         <input
@@ -433,7 +432,7 @@ export default function Checkout({
                         {/* Order summary */}
                         <div className="mt-10 lg:mt-0">
                             <h2 className="text-lg font-medium text-gray-900">
-                                Order summary
+                                La commande
                             </h2>
 
                             <div className="mt-4 bg-white border border-gray-200 rounded-lg shadow-sm">
@@ -486,9 +485,6 @@ export default function Checkout({
                                                             type="button"
                                                             className="-m-2.5 bg-white p-2.5 flex items-center justify-center text-gray-400 hover:text-gray-500"
                                                         >
-                                                            <span className="sr-only">
-                                                                Remove
-                                                            </span>
                                                             <TrashIcon
                                                                 className="h-5 w-5"
                                                                 aria-hidden="true"
@@ -512,7 +508,7 @@ export default function Checkout({
                                 </ul>
                                 <dl className="border-t border-gray-200 py-6 px-4 space-y-6 sm:px-6">
                                     <div className="flex items-center justify-between">
-                                        <dt className="text-sm">Subtotal</dt>
+                                        <dt className="text-sm">Sous-total</dt>
                                         <dd className="text-sm font-medium text-gray-900">
                                             {cartTotalPrice.toFixed(2)} dhs
                                         </dd>
@@ -521,7 +517,7 @@ export default function Checkout({
                                         "Cash On delivery" && (
                                         <div className="flex items-center justify-between">
                                             <dt className="text-sm">
-                                                Shipping
+                                                Livraison
                                             </dt>
                                             <dd className="text-sm font-medium text-gray-900">
                                                 {shipping_cost} Dhs
@@ -555,7 +551,7 @@ export default function Checkout({
                                     >
                                         {processing
                                             ? "Loading ..."
-                                            : "Confirm order"}
+                                            : "Confirmer la commande"}
                                     </button>
                                 </div>
                             </div>

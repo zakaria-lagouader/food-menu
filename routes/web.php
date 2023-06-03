@@ -24,11 +24,11 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/menu/{restaurant}', function ($restaurants) {
+Route::get('/menu/{restaurant}', function ($restaurant) {
     return Inertia::render('Menu', [
-        "products" => Product::where("restaurants", $restaurants)->with("category")->get(),
+        "products" => Product::where("restaurant", $restaurant)->with("category")->get(),
         "categories" => Category::all(),
-        "restaurants" => $restaurants
+        "restaurant" => $restaurant
     ]);
 });
 

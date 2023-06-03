@@ -12,11 +12,11 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                             Thank you!
                         </h1>
                         <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
-                            It's on the way!
+                            Elle est en route !
                         </p>
                         <p className="mt-2 text-base text-gray-500">
-                            Your order #{order.num} has shipped and will be with
-                            you soon.
+                            Votre commande #{order.num} a été livrée et vous
+                            parviendra bientôt.
                         </p>
                     </div>
 
@@ -24,11 +24,6 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                         aria-labelledby="order-heading"
                         className="mt-10 border-t border-gray-200"
                     >
-                        <h2 id="order-heading" className="sr-only">
-                            Your order
-                        </h2>
-
-                        <h3 className="sr-only">Items</h3>
                         {order.items.map(({ product, qty }) => (
                             <div
                                 key={product.id}
@@ -52,7 +47,7 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                                         <dl className="flex text-sm divide-x divide-gray-200 space-x-4 sm:space-x-6">
                                             <div className="flex">
                                                 <dt className="font-medium text-gray-900">
-                                                    Quantity
+                                                    Quantité
                                                 </dt>
                                                 <dd className="ml-2 text-gray-700">
                                                     {qty}
@@ -60,7 +55,7 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                                             </div>
                                             <div className="pl-4 flex sm:pl-6">
                                                 <dt className="font-medium text-gray-900">
-                                                    Price
+                                                    Prix
                                                 </dt>
                                                 <dd className="ml-2 text-gray-700">
                                                     {product.price} Dhs
@@ -84,7 +79,7 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                                 </div>
                                 <div>
                                     <dt className="font-medium text-gray-900">
-                                        Shipping method
+                                        Méthode de livraison
                                     </dt>
                                     <dd className="mt-2 text-gray-700">
                                         <p>{order.delivery_type}</p>
@@ -109,8 +104,6 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                                     </dd>
                                 </div>
                             </dl>
-
-                            <h3 className="sr-only">Summary</h3>
 
                             <dl className="space-y-6 border-t border-gray-200 text-sm pt-10">
                                 <div className="flex justify-between">
