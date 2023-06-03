@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::get('/menu/{restaurant}', function ($restaurant) {
     return Inertia::render('Menu', [
-        "products" => Product::where("restaurant", $restaurant)->with("category")->get(),
+        "products" => Product::where("restaurant", "like", "%$restaurant%")->with("category")->get(),
         "categories" => Category::all(),
         "restaurant" => $restaurant
     ]);
