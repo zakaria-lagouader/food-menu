@@ -3,7 +3,7 @@ import { ShowIcon, LinkIcon, ShopIcon } from "../icons";
 import { TProduct } from "../stores/products";
 import { useCart } from "../stores/cart";
 import { useSearchParams } from "../hooks/searchParams";
-import { asset } from "../lib/utils";
+import { asset, image_path } from "../lib/utils";
 
 type ProductCardProps = {
     product: TProduct;
@@ -20,7 +20,7 @@ function ProductCard({ product }: ProductCardProps) {
                         AJOUTÉ AU PANIER !
                     </p>
                     <img
-                        src={asset(`storage/${product.image}`)}
+                        src={image_path(product.image)}
                         alt={product.name}
                         className="w-40 h-40 rounded-full object-cover"
                     />
@@ -51,7 +51,7 @@ function ProductCard({ product }: ProductCardProps) {
                 }
             >
                 <img
-                    src={asset(`storage/${product.image}`)}
+                    src={image_path(product.image)}
                     alt={product.name}
                     className="aspect-[4/3] w-full object-cover"
                 />

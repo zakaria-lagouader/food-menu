@@ -37,6 +37,8 @@ function Home({ products, categories, restaurant }: HomeProps) {
     useEffect(() => {
         setProducts(products);
         setCategories(categories);
+        localStorage.setItem("restaurant", restaurant);
+        localStorage.setItem("phone", phones[restaurant]);
     }, [products]);
 
     return (

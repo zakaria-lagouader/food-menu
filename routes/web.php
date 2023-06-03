@@ -36,11 +36,8 @@ Route::match(["GET", "POST"], "/checkout", function (Request $request) {
     if ($request->isMethod('POST')) {
         session()->put("cart", $request->cart);
     }
-    if (count(session()->get("cart") ?? []) == 0) {
-        return redirect("/");
-    }
     return Inertia::render('Checkout', [
-        "cart" => session()->get("cart"),
+        "cart" => session()->get("cart") ?? [],
     ]);
 });
 

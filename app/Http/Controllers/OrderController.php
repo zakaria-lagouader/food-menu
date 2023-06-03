@@ -39,6 +39,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             "nom" => "required",
             "prenom" => "required",
@@ -85,7 +86,7 @@ class OrderController extends Controller
         $order = Order::create(array_merge($request->except(["cart", "create_account", "coupon_code"]), [
             "num" => Str::random(10),
             "total" => $order_total,
-            "user_id" => $account->id ?? null
+            "user_id" => $account->id ?? null,
         ]));
 
         foreach ($request->cart as $cartItem) {

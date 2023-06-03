@@ -1,7 +1,7 @@
 import React from "react";
 import { useSetAtom, useAtomValue } from "jotai";
 import { categoriesAtome, selectedCategoryAtom } from "../stores/products";
-import { asset } from "../lib/utils";
+import { asset, image_path } from "../lib/utils";
 const PizzaIcon = "/img/pizza.svg";
 
 function cls(active: boolean, activeClasses: string, inactiveClasses: string) {
@@ -57,7 +57,7 @@ function FilterButtons() {
                         key={category.id}
                         text={category.name}
                         filter={category.name}
-                        image={asset(`storage/${category.image}`)}
+                        image={image_path(category.image)}
                         active={category.name === selectedCategory}
                     />
                 ))}

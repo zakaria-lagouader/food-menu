@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ShopIcon } from "../icons";
 import { useCart } from "../stores/cart";
 import { Link } from "@inertiajs/react";
-import { asset } from "../lib/utils";
+import { asset, image_path } from "../lib/utils";
 
 function CounterInput({
     value,
@@ -113,7 +113,7 @@ function CartSection() {
                             className="flex items-center gap-4 py-4"
                         >
                             <img
-                                src={asset(`storage/${item.product.image}`)}
+                                src={image_path(item.product.image)}
                                 alt=""
                                 className="w-14 h-14 rounded-full object-cover"
                             />

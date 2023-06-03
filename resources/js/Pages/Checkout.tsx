@@ -6,7 +6,7 @@ import { TCartItem } from "@/stores/products";
 import { FormEventHandler, useEffect, useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import { CheckCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
-import { asset, classNames } from "@/lib/utils";
+import { asset, classNames, image_path } from "@/lib/utils";
 
 const deliveryMethods = [
     {
@@ -55,10 +55,34 @@ export default function Checkout({
             ...data,
             cart: cartItems,
             total: cartTotalPrice,
+            restaurant: localStorage.getItem("restaurant"),
         }));
 
         post("/order/checkout");
+        if (data.use_whatsapp) {
+            sendWhatsappMessage();
+        }
+
+        setCartItems([]);
     };
+
+    function sendWhatsappMessage() {
+        const products = cartItems
+            .map((item) => {
+                return `${item.product.name} x ${item.qty} \n`;
+            })
+            .join(" ");
+
+        const text = `Bonjour, Je suis ${data.nom}, \nje veux commander : \n${products}, Veuillez livrer ces articles Ã  l'adresse ${data.adress}. \nS'il vous plait de me contacter dans le numero suivant ${data.telephone} pour confirmer la commande. \nNotes : ${data.notes}`;
+
+        const phone = localStorage.getItem("phone");
+
+        const lien = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
+            text
+        )}`;
+
+        window.open(lien, "_blank")!.focus();
+    }
 
     useEffect(() => {
         setCartItems(cart);
@@ -448,8 +472,8 @@ export default function Checkout({
                                         >
                                             <div className="flex-shrink-0">
                                                 <img
-                                                    src={asset(
-                                                        `storage/${item.product.image}`
+                                                    src={image_path(
+                                                        item.product.image
                                                     )}
                                                     alt={item.product.name}
                                                     className="w-20 rounded-md aspect-square object-cover"

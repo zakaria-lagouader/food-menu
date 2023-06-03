@@ -3,7 +3,7 @@ import { ShopIcon } from "../icons";
 import { useCart } from "../stores/cart";
 import { useProduct } from "../stores/products";
 import { useSearchParams } from "../hooks/searchParams";
-import { asset } from "../lib/utils";
+import { asset, image_path } from "../lib/utils";
 
 function ProductModal() {
     const { isInCart, addItemToCart } = useCart();
@@ -39,7 +39,7 @@ function ProductModal() {
                     </svg>
                 </button>
                 <img
-                    src={asset(`storage/${product.image}`)}
+                    src={image_path(product.image)}
                     className="aspect-video w-full object-cover"
                     alt=""
                 />

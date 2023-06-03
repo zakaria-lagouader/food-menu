@@ -57,7 +57,7 @@ class User extends Authenticatable
         $couponAmount = floor($this->points / $points_needed) * $dollars_per_points;
         $couponCode = uniqid(); // Generate a unique coupon code using uniqid()
 
-        if ($couponAmount === 0) return;
+        if ($couponAmount == 0) return;
 
         $coupon = Coupon::create([
             'code' => $couponCode,

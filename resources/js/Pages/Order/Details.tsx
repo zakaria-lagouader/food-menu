@@ -1,5 +1,5 @@
 import AppLayout from "@/Layouts/AppLayout";
-import { asset } from "@/lib/utils";
+import { asset, image_path } from "@/lib/utils";
 import { Order, PageProps } from "@/types";
 
 export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
@@ -30,7 +30,7 @@ export default function OrderDetails({ order }: PageProps<{ order: Order }>) {
                                 className="py-10 border-b border-gray-200 flex space-x-6"
                             >
                                 <img
-                                    src={asset("storage/" + product.image)}
+                                    src={image_path(product.image)}
                                     alt={product.name}
                                     className="flex-none w-20 h-20 object-center object-cover bg-gray-100 rounded-lg sm:w-40 sm:h-40"
                                 />

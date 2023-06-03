@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import { asset, classNames } from "@/lib/utils";
+import { asset, classNames, image_path } from "@/lib/utils";
 import AppLayout from "@/Layouts/AppLayout";
 import { Order, PageProps } from "@/types";
 
@@ -90,9 +90,8 @@ export default function OrdersHistory({
                                                         <div className="flex items-center sm:items-start">
                                                             <div className="flex-shrink-0 w-20 h-20 bg-gray-200 rounded-lg overflow-hidden sm:w-40 sm:h-40">
                                                                 <img
-                                                                    src={asset(
-                                                                        "storage/" +
-                                                                            product.image
+                                                                    src={image_path(
+                                                                        product.image
                                                                     )}
                                                                     alt={
                                                                         product.name
