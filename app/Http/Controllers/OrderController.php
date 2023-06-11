@@ -52,7 +52,6 @@ class OrderController extends Controller
         ]);
 
         $account = null;
-        $score = 0;
 
         $order_total = $request->delivery_type == "Cash On delivery" ? $request->total + 10 : $request->total;
         $coupon = Coupon::where("code", $request->coupon_code)->where("is_used", false)->first();
@@ -94,10 +93,9 @@ class OrderController extends Controller
                 "qty" => $cartItem["qty"],
                 "product_id" => $cartItem["product"]["id"],
             ]);
-
-            $score += intval($cartItem["product"]["points"]) * intval($cartItem["qty"]);
         }
 
+        $score = intval((intval($request->total) * 25) / 50);
         if ($account) {
             $account->update([
                 "points" => $score
