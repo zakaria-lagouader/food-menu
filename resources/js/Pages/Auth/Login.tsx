@@ -47,7 +47,13 @@ export default function Login() {
                                 <div className="mt-2 max-w-xl text-sm text-gray-700">
                                     <ul className="list-disc pl-4 space-y-1">
                                         {Object.keys(errors).map((key) => (
-                                            <li key={key}>{errors[key]}</li>
+                                            <li key={key}>
+                                                {
+                                                    errors[
+                                                        key as keyof typeof errors
+                                                    ]
+                                                }
+                                            </li>
                                         ))}
                                     </ul>
                                 </div>

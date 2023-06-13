@@ -16,7 +16,7 @@ import { Head } from "@inertiajs/react";
 type HomeProps = {
     products: TProduct[];
     categories: TCategory[];
-    restaurant: string;
+    restaurant: "anoual" | "palmier";
 };
 
 const phones = {
